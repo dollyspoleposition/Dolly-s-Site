@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dolly’s Pole Position</title>
+
+  <!-- Google Analytics (replace G-99L81SBD6T) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-99L81SBD6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-99L81SBD6T');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: block;
+      background: linear-gradient(90deg, #ff2e63, #ff6b3d);
+      color: white;
+      padding: 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 25px;
+      box-shadow: 0 10px 30px rgba(255,46,99,0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover { transform: scale(1.03); }
+
+    .subtext {
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .live {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 8px;
+    }
+
+    .dot {
+      height: 8px;
+      width: 8px;
+      background-color: #00ff88;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>🏁 Dolly’s Pole Position</h1>
+
+    <p class="subtext">Step into my private garage… full access unlocked 🔒</p>
+
+    <div class="hero">
+      <img src="hero.jpg" alt="Dolly">
+    </div>
+
+    <p class="subtext">💬 Chat with me • 🎥 Uncensored videos • 🔥 Daily exclusive content • 🏁 VIP treatment</p>
+
+    <a href="https://fansly.com/dollyspoleposition" class="btn" onclick="trackClick()">
+      Enter the Garage
+    </a>
+
+    <!-- LIVE INDICATOR -->
+    <p class="live"><span class="dot"></span><span id="viewerCount"></span> in the garage</p>
+
+    <div class="footer">18+ Only • All Rights Reserved</div>
+
+  </div>
+
+  <script>
+    // Fake but subtle viewer count
+    function updateViewers() {
+      const count = Math.floor(Math.random() * 8) + 12; // 12–20
+      document.getElementById('viewerCount').innerText = count;
+    }
+    updateViewers();
+    setInterval(updateViewers, 15000);
+
+    // Track button clicks
+    function trackClick() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click_fansly', {
+          event_category: 'engagement',
+          event_label: 'fansly_button'
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
