@@ -108,9 +108,52 @@
 
     <p class="subtext">💬 Chat with me • 🎥 Uncensored videos • 🔥 Daily exclusive content • 🏁 VIP treatment</p>
 
-    <a href="https://fansly.com/dollyspoleposition" class="btn" onclick="trackClick()">
-      Enter the Garage
-    </a>
+   <div style="text-align:center; margin:40px 0; font-family: sans-serif;">
+
+  <!-- Fansly Coming Soon Button -->
+  <a href="#" onclick="return false;" 
+     style="display:inline-block; padding:12px 24px; 
+     background:#999; color:white; text-decoration:none; 
+     border-radius:8px; font-weight:bold; cursor:not-allowed; font-size:16px; margin-bottom:20px;">
+     Fansly – Coming Soon
+  </a>
+
+  <!-- Notify Me Form -->
+  <form name="notify" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="margin-top:20px; display:inline-block; text-align:left; max-width:350px; width:100%;">
+    
+    <!-- Hidden honeypot for bots -->
+    <input type="hidden" name="form-name" value="notify">
+    <p style="display:none;">
+      <label>Don’t fill this out: <input name="bot-field"></label>
+    </p>
+
+    <label for="email" style="font-weight:bold; display:block; margin-bottom:8px;">Be the first to know when Fansly launches:</label>
+    <input type="email" name="email" id="email" placeholder="Enter your email" required
+           style="padding:10px; width:100%; margin-bottom:10px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;">
+    
+    <button type="submit" 
+            style="padding:10px 20px; background:#FF3366; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:bold;">
+      Notify Me
+    </button>
+
+    <!-- Thank-you message -->
+    <p style="margin-top:10px; color:green; display:none;" id="thank-you">Thank you! We’ll notify you as soon as Fansly launches.</p>
+  </form>
+
+</div>
+
+<!-- Script to show thank-you message after submission -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector('form[name="notify"]');
+  form.addEventListener('submit', function() {
+    setTimeout(function() {
+      document.getElementById('thank-you').style.display = 'block';
+      form.reset();
+    }, 100);
+  });
+});
+</script>
 
     <!-- LIVE INDICATOR -->
     <p class="live"><span class="dot"></span><span id="viewerCount"></span> in the garage</p>
