@@ -108,7 +108,7 @@
 
     <p class="subtext">💬 Chat with me • 🎥 Uncensored videos • 🔥 Daily exclusive content • 🏁 VIP treatment</p>
 
-   <div style="text-align:center; margin:40px 0; font-family: sans-serif;">
+   <div style="text-align:center; margin:40px 0; font-family:sans-serif;">
 
   <!-- Fansly Coming Soon Button -->
   <a href="#" onclick="return false;" 
@@ -121,7 +121,7 @@
   <!-- Notify Me Form -->
   <form name="notify" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="margin-top:20px; display:inline-block; text-align:left; max-width:350px; width:100%;">
     
-    <!-- Hidden honeypot for bots -->
+    <!-- Hidden fields for Netlify -->
     <input type="hidden" name="form-name" value="notify">
     <p style="display:none;">
       <label>Don’t fill this out: <input name="bot-field"></label>
@@ -136,21 +136,26 @@
       Notify Me
     </button>
 
-    <!-- Thank-you message -->
+    <!-- Inline Thank-you Message -->
     <p style="margin-top:10px; color:green; display:none;" id="thank-you">Thank you! We’ll notify you as soon as Fansly launches.</p>
   </form>
 
 </div>
 
-<!-- Script to show thank-you message after submission -->
+<!-- JavaScript to handle submission without redirect -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.querySelector('form[name="notify"]');
-  form.addEventListener('submit', function() {
-    setTimeout(function() {
-      document.getElementById('thank-you').style.display = 'block';
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default page reload
+    const formData = new FormData(form);
+    fetch("/", {
+      method: "POST",
+      body: formData
+    }).then(() => {
+      document.getElementById("thank-you").style.display = "block";
       form.reset();
-    }, 100);
+    }).catch(err => alert("Oops! There was an error. Please try again."));
   });
 });
 </script>
