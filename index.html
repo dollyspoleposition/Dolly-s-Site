@@ -146,16 +146,22 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.querySelector('form[name="notify"]');
+
   form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default page reload
+    e.preventDefault();
+
     const formData = new FormData(form);
+
     fetch("/", {
       method: "POST",
-      body: formData
-    }).then(() => {
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
       document.getElementById("thank-you").style.display = "block";
       form.reset();
-    }).catch(err => alert("Oops! There was an error. Please try again."));
+    })
+    .catch(() => alert("Oops! There was an error. Please try again."));
   });
 });
 </script>
