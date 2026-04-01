@@ -252,7 +252,61 @@
     50% { transform: scale(1.15); opacity: 0.7; }
     100% { transform: scale(1); opacity: 1; }
   }
+/* === POLE POSITION HEADER === */
+.pole-cta {
+  text-align: center;
+  padding: 18px 0 8px;
+  margin: 0 auto 18px;
+}
 
+.pole-kicker {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+.pole-title {
+  margin: 0;
+  line-height: 0.95;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.pole-top {
+  display: block;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #cfd5df;
+  margin-bottom: 4px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.pole-bottom {
+  display: block;
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  background: linear-gradient(180deg, #ffffff 0%, #e6ebf2 40%, #aeb7c5 75%, #7b8594 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 8px 22px rgba(0,0,0,0.45);
+}
+
+.pole-line {
+  width: min(380px, 75%);
+  height: 2px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, transparent, #ff2b3d, transparent);
+  box-shadow:
+    0 0 6px rgba(255,43,61,0.6),
+    0 0 16px rgba(255,43,61,0.25);
+  transform: rotate(-4deg);
+}
   @media (max-width: 700px) {
     .container {
       padding: 18px 14px 110px;
