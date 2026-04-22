@@ -154,6 +154,27 @@
   object-position: center;
   background: #0a0a0d;
 }
+    .slide-frame {
+  position: relative;
+  display: inline-block;
+  border-radius: 22px;
+  padding: 2px;
+  background: linear-gradient(90deg, #f3a7c6, #ff4fa3, #f3a7c6, #ff4fa3);
+  background-size: 300% 300%;
+  animation: pinkBorderMove 4s linear infinite;
+  box-shadow: 0 0 18px rgba(243,167,198,0.35);
+}
+
+.slide-frame img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: 650px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  border-radius: 20px;
+}
     }
 
     .arrow {
