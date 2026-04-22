@@ -124,11 +124,20 @@
 }
 
     .carousel-wrap {
-      position: relative;
-      overflow: hidden;
-      border-radius: 22px;
-      background: #09090c;
-    }
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: transparent;
+}
+
+.slide img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  display: block;
+}
 
     .carousel-track {
       display: flex;
