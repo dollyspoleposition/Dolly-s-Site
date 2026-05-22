@@ -8,7 +8,7 @@
 
 <meta name="description" content="Dolly's Pole Position — behind the scenes content, uncensored videos, VIP chat, and exclusive photos.">
 <meta property="og:title" content="Dolly's Pole Position">
-<meta property="og:description" content="Behind the scenes content, uncensored videos, VIP chat, and exclusive photos.">
+<meta property="og:description" content="Behind the scenes content, exclusive videos, VIP chat, and exclusive photos.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="banner-photo.png">
 
@@ -294,12 +294,9 @@ img{
 
 <main class="wrap">
 
-<a class="banner-link"
-href="https://fansly.com/dollyspoleposition"
-target="_blank"
-onclick="trackFanslyClick('banner_click')">
-<img src="banner-photo.png" alt="Banner">
-</a>
+<div class="banner-link" id="bannerFanslyAccess">
+  <img src="banner-photo.png" alt="Banner">
+</div>
 
 <section class="carousel-shell">
 <div class="carousel-wrap">
@@ -358,12 +355,9 @@ onclick="trackFanslyClick('banner_click')">
 </section>
 
 <div class="desktop-cta">
-<a class="btn-primary"
-href="https://fansly.com/dollyspoleposition"
-target="_blank"
-onclick="trackFanslyClick('desktop_cta_click')">
-🏁 Enter My Garage
-</a>
+  <button class="btn-primary" id="desktopFanslyAccess">
+    🏁 Pitlane Access
+  </button>
 </div>
 
 <div class="footer">
@@ -373,12 +367,9 @@ dollyspoleposition.vip © 2026
 </main>
 
 <div class="sticky">
-<a class="btn-primary"
-href="https://fansly.com/dollyspoleposition"
-target="_blank"
-onclick="trackFanslyClick('sticky_cta_click')">
-🏁 Enter My Garage
-</a>
+  <button class="btn-primary" id="stickyFanslyAccess">
+    🏁 Pitlane Access
+  </button>
 </div>
 
 <script>
@@ -426,6 +417,25 @@ function trackFanslyClick(label){
   }
 }
 
+  const fanslyUrl = atob("aHR0cHM6Ly9mYW5zbHkuY29tL2RvbGx5c3BvbGVwb3NpdGlvbg==");
+
+function openFansly(label){
+  trackFanslyClick(label);
+  window.open(fanslyUrl, "_blank", "noopener,noreferrer");
+}
+
+document.getElementById("bannerFanslyAccess").addEventListener("click", () => {
+  openFansly("banner_click");
+});
+
+document.getElementById("desktopFanslyAccess").addEventListener("click", () => {
+  openFansly("desktop_cta_click");
+});
+
+document.getElementById("stickyFanslyAccess").addEventListener("click", () => {
+  openFansly("sticky_cta_click");
+});
+  
 renderDots();
 setInterval(nextSlide,3600);
 </script>
