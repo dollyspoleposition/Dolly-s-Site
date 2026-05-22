@@ -71,6 +71,7 @@ img{
   border-radius:28px;
   overflow:hidden;
   box-shadow:0 18px 50px rgba(0,0,0,.42);
+  cursor:pointer;
 }
 
 .banner-link img{
@@ -294,7 +295,7 @@ img{
 
 <main class="wrap">
 
-<div class="banner-link" id="bannerAccess">
+<div class="banner-link" onclick="openAccess('banner_click')">
   <img src="banner-photo.png" alt="Banner">
 </div>
 
@@ -433,11 +434,7 @@ function openAccess(label){
 
 document.getElementById("desktopAccess").addEventListener("click", () => {
   openAccess("desktop_button");
-});
-
-document.getElementById("bannerAccess").addEventListener("click", () => {
-  openAccess("banner_click");
-});
+})
 
 
 document.getElementById("stickyAccess").addEventListener("click", () => {
