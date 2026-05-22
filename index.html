@@ -294,7 +294,7 @@ img{
 
 <main class="wrap">
 
-<div class="banner-link" id="bannerFanslyAccess">
+<div class="banner-link" id="bannerAccess">
   <img src="banner-photo.png" alt="Banner">
 </div>
 
@@ -355,7 +355,7 @@ img{
 </section>
 
 <div class="desktop-cta">
-  <button class="btn-primary" id="desktopFanslyAccess">
+  <button class="btn-primary" id="desktopAccess">
     🏁 Pitlane Access
   </button>
 </div>
@@ -367,7 +367,7 @@ dollyspoleposition.vip © 2026
 </main>
 
 <div class="sticky">
-  <button class="btn-primary" id="stickyFanslyAccess">
+  <button class="btn-primary" id="stickyAccess">
     🏁 Pitlane Access
   </button>
 </div>
@@ -408,32 +408,45 @@ function prevSlide(){
   updateCarousel();
 }
 
-function trackFanslyClick(label){
+function trackAccessClick(label){
   if(typeof gtag==="function"){
-    gtag("event","fansly_click",{
+    gtag("event","access_click",{
       event_category:"engagement",
       event_label:label
     });
   }
 }
-
-  const fanslyUrl = atob("aHR0cHM6Ly9mYW5zbHkuY29tL2RvbGx5c3BvbGVwb3NpdGlvbg==");
-
-function openFansly(label){
-  trackFanslyClick(label);
-  window.open(fanslyUrl, "_blank", "noopener,noreferrer");
+  }
 }
 
-document.getElementById("bannerFanslyAccess").addEventListener("click", () => {
-  openFansly("banner_click");
+  const accessUrl = atob("aHR0cHM6Ly9mYW5zbHkuY29tL2RvbGx5c3BvbGVwb3NpdGlvbg==");
+
+function openAccess(label){
+
+  if(typeof gtag==="function"){
+    gtag("event","access_click",{
+      event_category:"engagement",
+      event_label:label
+    });
+  }
+
+  window.open(accessUrl, "_blank", "noopener,noreferrer");
+}
+
+document.getElementById("desktopAccess").addEventListener("click", () => {
+  openAccess("desktop_button");
 });
 
-document.getElementById("desktopFanslyAccess").addEventListener("click", () => {
-  openFansly("desktop_cta_click");
+document.getElementById("bannerAccess").addEventListener("click", () => {
+  openAccess("banner_click");
 });
 
-document.getElementById("stickyFanslyAccess").addEventListener("click", () => {
-  openFansly("sticky_cta_click");
+document.getElementById("desktopAccess").addEventListener("click", () => {
+  openAccess("desktop_button");
+});
+
+document.getElementById("stickyAccess").addEventListener("click", () => {
+  openAccess("sticky_button");
 });
   
 renderDots();
